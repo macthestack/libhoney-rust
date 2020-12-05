@@ -9,7 +9,12 @@ repository = "https://github.com/nlopes/libhoney-rust.git"
 license = "MIT"
 readme = "README.md"
 keywords = ["web", "honeycomb", "api"]
-categories = ["network-programming", "asynchronous", "api-bindings", "web-programming"]
+categories = [
+  "network-programming",
+  "asynchronous",
+  "api-bindings",
+  "web-programming"
+]
 exclude = [".gitignore", ".travis.yml"]
 
 [lib]
@@ -25,7 +30,11 @@ crossbeam-channel = "0.5"
 log = "0.4"
 parking_lot = "0.11"
 rand = "0.7"
-reqwest = { version = "0.10.8", features = ["blocking", "json"] }
+reqwest = { version = "0.10.8", default-features = false, features = [
+  "blocking",
+  "json",
+  "rustls-tls"
+] }
 serde = { version = "1.0.117", features = ["derive"] }
 serde_json = "1.0.59"
 tokio = { version = "0.2", features = ["time"] }
